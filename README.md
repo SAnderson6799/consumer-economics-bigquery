@@ -28,3 +28,9 @@ Source: `bigquery-public-data.thelook_ecommerce` (synthetic e-commerce data, so 
 | LTV proxy | Cumulative gross margin per customer, by months since first order and cohort | order_items, products |
 | RFM segments | Recency (days since last order), frequency (orders), monetary (revenue), scored into groups | order_items |
 | Revenue concentration | Share of revenue from the top 10% of customers | order_items |
+
+## Funnel notes
+
+- Funnel steps are product view, cart and purchase, counted on distinct sessions (1 Jan 2020 to 31 Oct 2026: 608,009 sessions, 390,907 with a cart event, 172,376 with a purchase). Almost every session has a product view, so the funnel has no meaningful top-of-funnel step.
+- 71.6% of sessions have no `user_id` (435,275 sessions), and none of these record a purchase. Sessions are either fully anonymous or fully identified. Among identified sessions, 99.8% end in a purchase. Session conversion therefore largely reflects the share of identified sessions, which is a property of the synthetic data, so funnel results are treated as descriptive and not as benchmarks.
+- 9 sessions record a purchase without a cart event and are excluded from the ordered funnel.
